@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  SpacegameReloaded
-//
-//  Created by Training on 01/10/2016.
-//  Copyright © 2016 Training. All rights reserved.
-//
 
 import UIKit
 
