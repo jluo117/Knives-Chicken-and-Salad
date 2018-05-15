@@ -120,13 +120,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        // fireTorpedo()
     }
     func start(){
+        let spaceShipTexture = SKTexture(imageNamed: "shuttle")
         self.win = false
         self.gameOver = false
         self.addChild(starfield)
-        player.physicsBody = SKPhysicsBody(rectangleOf: player.size)
+        player = SKSpriteNode(texture: spaceShipTexture)
+        
+        player.physicsBody = SKPhysicsBody(texture: spaceShipTexture,
+                                           size: CGSize(width: player.size.width,
+                                                        height: player.size.height))
         player.physicsBody?.isDynamic = false
         player.name = "player"
-        player.position = CGPoint(x: self.frame.size.width / 2, y: player.size.height / 2 + 20)
+        player.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 12)
         //player.physicsBody = SKPhysicsBody(circleOfRadius: torpedoNode.size.width / 2)
         player.physicsBody?.isDynamic = true
         player.physicsBody?.categoryBitMask = objectCategory
@@ -136,9 +141,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(player)
         
         timeLabel = SKLabelNode(text: "ETA: 40")
-        timeLabel.position = CGPoint(x: 100, y: self.frame.size.height - 60)
+        timeLabel.position = CGPoint(x: self.frame.width / 4, y: self.frame.size.height - 60)
         timeLabel.fontName = "AmericanTypewriter-Bold"
-        timeLabel.fontSize = 36
+        timeLabel.fontSize = self.frame.width / 12
         timeLabel.fontColor = UIColor.white
         timeLeft = 40
         
@@ -210,7 +215,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didSimulatePhysics() {
         
-        player.position.x += xAcceleration * 30
+        player.position.x += xAcceleration * 12
         
         if player.position.x < -20 {
             player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
