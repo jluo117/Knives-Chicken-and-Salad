@@ -4,6 +4,9 @@ import GameplayKit
 import CoreMotion
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
+    var ratioHeight = 0.0
+    var ratioWideth = 0.0
+    var screenSize = UIScreen.main.bounds
     var gameOver = true
     var starfield:SKEmitterNode!
     var player:SKSpriteNode!
@@ -22,6 +25,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var xAcceleration:CGFloat = 0
     
     override func didMove(to view: SKView) {
+        screenSize = UIScreen.main.bounds
+        ratioHeight = Double(screenSize.height / self.frame.height)
+        ratioWideth = Double(screenSize.width / self.frame.width)
         timeLabel = SKLabelNode(text: "ETA:" + String(timeLeft))
         starfield = SKEmitterNode(fileNamed: "Starfield")
         player = SKSpriteNode(imageNamed: "shuttle")
@@ -131,7 +137,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                                         height: player.size.height))
         player.physicsBody?.isDynamic = false
         player.name = "player"
-        player.position = CGPoint(x: self.frame.size.width / 2, y: self.frame.size.height / 12)
+        player.position = CGPoint(x: self.frame.size.width / 2, y: CGFloat((Double(self.frame.size.height) / ratioHeight) / 12))
         //player.physicsBody = SKPhysicsBody(circleOfRadius: torpedoNode.size.width / 2)
         player.physicsBody?.isDynamic = true
         player.physicsBody?.categoryBitMask = objectCategory
@@ -141,7 +147,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(player)
         
         timeLabel = SKLabelNode(text: "ETA: 40")
-        timeLabel.position = CGPoint(x: self.frame.width / 4, y: self.frame.size.height - 60)
+        timeLabel.position = CGPoint(x: CGFloat(Double(self.frame.width) / ratioWideth / 4), y: CGFloat(Double(self.frame.size.height) * ratioHeight))
         timeLabel.fontName = "AmericanTypewriter-Bold"
         timeLabel.fontSize = self.frame.width / 12
         timeLabel.fontColor = UIColor.white
