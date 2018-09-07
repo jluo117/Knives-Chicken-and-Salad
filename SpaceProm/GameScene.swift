@@ -26,8 +26,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         screenSize = UIScreen.main.bounds
-        ratioHeight = Double(screenSize.height / self.frame.height)
-        ratioWideth = Double(screenSize.width / self.frame.width)
+       
+            ratioHeight = Double(screenSize.height / self.frame.height)
+            ratioWideth = Double(screenSize.width / self.frame.width)
+        print(ratioHeight)
         timeLabel = SKLabelNode(text: "ETA:" + String(timeLeft))
         starfield = SKEmitterNode(fileNamed: "Starfield")
         player = SKSpriteNode(imageNamed: "shuttle")
@@ -67,7 +69,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             win = true
             let winLabel = SKLabelNode(text: "You made it to Space Prom")
             winLabel.fontName = "AmericanTypewriter-Bold"
-            winLabel.fontSize = 20
+            winLabel.fontSize = CGFloat(  Double(winLabel.fontSize) / ratioWideth) / 1.2
             winLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
             self.addChild(winLabel)
             player.physicsBody?.usesPreciseCollisionDetection = false
@@ -137,7 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                                                         height: player.size.height))
         player.physicsBody?.isDynamic = false
         player.name = "player"
-        player.position = CGPoint(x: self.frame.size.width / 2, y: CGFloat((Double(self.frame.size.height) / ratioHeight) / 12))
+        player.position = CGPoint(x: self.frame.size.width / 2, y: CGFloat(((Double(self.frame.size.height) / ratioHeight) / 12) +  (Double(self.frame.size.height) * ratioHeight / 18 )))
         //player.physicsBody = SKPhysicsBody(circleOfRadius: torpedoNode.size.width / 2)
         player.physicsBody?.isDynamic = true
         player.physicsBody?.categoryBitMask = objectCategory
@@ -147,7 +149,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(player)
         
         timeLabel = SKLabelNode(text: "ETA: 40")
-        timeLabel.position = CGPoint(x: CGFloat(Double(self.frame.width) / ratioWideth / 4), y: CGFloat(Double(self.frame.size.height) * ratioHeight))
+        timeLabel.position = CGPoint(x: CGFloat(Double(self.frame.width) * ratioWideth / 3), y: CGFloat((Double(screenSize.height) / ratioHeight) - ((Double(self.frame.height) * (0.1 / ratioHeight)))))
         timeLabel.fontName = "AmericanTypewriter-Bold"
         timeLabel.fontSize = self.frame.width / 12
         timeLabel.fontColor = UIColor.white
@@ -208,6 +210,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.gameOver = true
         let gameoverLabel = SKLabelNode(text: "Your ride to Prom is Gone")
+        gameoverLabel.fontSize = CGFloat(  Double(gameoverLabel.fontSize) / ratioWideth) / 1.2
         self.addChild(gameoverLabel)
         gameoverLabel.position = CGPoint(x: self.frame.width / 2, y: self.frame.height / 2)
         let tryAgainLabel = SKLabelNode(text: "Tap to try again")
