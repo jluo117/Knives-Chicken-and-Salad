@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7943746A214C3A9A00A6560D /* 16x16 RPG Item PackItem__00.png in Resources */ = {isa = PBXBuildFile; fileRef = 79437469214C3A9A00A6560D /* 16x16 RPG Item PackItem__00.png */; };
+		7943746C214C3DA400A6560D /* Chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = 7943746B214C3DA400A6560D /* Chicken.png */; };
+		7943746F214C3EC800A6560D /* Peach.png in Resources */ = {isa = PBXBuildFile; fileRef = 7943746D214C3EC800A6560D /* Peach.png */; };
+		79437470214C3EC800A6560D /* MelonWater.png in Resources */ = {isa = PBXBuildFile; fileRef = 7943746E214C3EC800A6560D /* MelonWater.png */; };
 		79C80DBD21424B9200D0FD11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C80DBC21424B9200D0FD11 /* AppDelegate.swift */; };
 		79C80DBF21424B9200D0FD11 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79C80DBE21424B9200D0FD11 /* GameScene.sks */; };
 		79C80DC121424B9200D0FD11 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 79C80DC021424B9200D0FD11 /* Actions.sks */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79437469214C3A9A00A6560D /* 16x16 RPG Item PackItem__00.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "16x16 RPG Item PackItem__00.png"; path = "Assets.xcassets/16x16 RPG Item PackItem__00.png"; sourceTree = "<group>"; };
+		7943746B214C3DA400A6560D /* Chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Chicken.png; path = Assets.xcassets/Chicken.png; sourceTree = "<group>"; };
+		7943746D214C3EC800A6560D /* Peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Peach.png; path = Assets.xcassets/Peach.png; sourceTree = "<group>"; };
+		7943746E214C3EC800A6560D /* MelonWater.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MelonWater.png; path = Assets.xcassets/MelonWater.png; sourceTree = "<group>"; };
 		79C80DB921424B9200D0FD11 /* Knives-Chicken-and-Salad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Knives-Chicken-and-Salad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79C80DBC21424B9200D0FD11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79C80DBE21424B9200D0FD11 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -60,13 +68,17 @@
 		79C80DBB21424B9200D0FD11 /* Knives-Chicken-and-Salad */ = {
 			isa = PBXGroup;
 			children = (
+				7943746E214C3EC800A6560D /* MelonWater.png */,
+				7943746D214C3EC800A6560D /* Peach.png */,
 				79C80DBC21424B9200D0FD11 /* AppDelegate.swift */,
 				79C80DBE21424B9200D0FD11 /* GameScene.sks */,
+				7943746B214C3DA400A6560D /* Chicken.png */,
 				79C80DC021424B9200D0FD11 /* Actions.sks */,
 				79C80DC221424B9200D0FD11 /* GameScene.swift */,
 				79C80DC421424B9200D0FD11 /* GameViewController.swift */,
 				79C80DC621424B9200D0FD11 /* Main.storyboard */,
 				79C80DC921424B9500D0FD11 /* Assets.xcassets */,
+				79437469214C3A9A00A6560D /* 16x16 RPG Item PackItem__00.png */,
 				79C80DCB21424B9500D0FD11 /* LaunchScreen.storyboard */,
 				79C80DCE21424B9500D0FD11 /* Info.plist */,
 			);
@@ -131,9 +143,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7943746A214C3A9A00A6560D /* 16x16 RPG Item PackItem__00.png in Resources */,
 				79C80DC821424B9200D0FD11 /* Main.storyboard in Resources */,
+				7943746C214C3DA400A6560D /* Chicken.png in Resources */,
 				79C80DBF21424B9200D0FD11 /* GameScene.sks in Resources */,
+				79437470214C3EC800A6560D /* MelonWater.png in Resources */,
 				79C80DCA21424B9500D0FD11 /* Assets.xcassets in Resources */,
+				7943746F214C3EC800A6560D /* Peach.png in Resources */,
 				79C80DCD21424B9500D0FD11 /* LaunchScreen.storyboard in Resources */,
 				79C80DC121424B9200D0FD11 /* Actions.sks in Resources */,
 			);

@@ -10,6 +10,7 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
+    var possibleFood = ["Peach","Chicken","Watermellon"]
     var inPlay = false
     private var Startlabel : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -70,5 +71,10 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    @objc func addFood(){
+        possibleFood = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: possibleFood) as! [String]
+        let food = SKSpriteNode(imageNamed: possibleFood[0])
+        
     }
 }
